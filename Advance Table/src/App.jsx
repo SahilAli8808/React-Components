@@ -2,13 +2,13 @@
 import { useState } from "react";
 import { FaSort } from "react-icons/fa6";
 const peoples = [
-  {name: "Sahil Ali",position:"Software Engineer", office :"Tokyo", age:"22", startdate:"2024/07/01", salary:"162700"},
-  {name: "Saif Ali",position:"Software Engineer", office :"Tokyo", age:"22", startdate:"2024/07/01", salary:"162700"},
-  {name: "Rahul Kumar",position:"Software Engineer", office :"Tokyo", age:"22", startdate:"2024/07/01", salary:"162700"},
-  {name: "Owais Khan",position:"Software Engineer", office :"Tokyo", age:"22", startdate:"2024/07/01", salary:"162700"},
-  {name: "Lucky Ali",position:"Software Engineer", office :"Tokyo", age:"22", startdate:"2024/07/01", salary:"162700"},
-  {name: "Sahil Ali",position:"Software Engineer", office :"Tokyo", age:"22", startdate:"2024/07/01", salary:"162700"},
-  {name: "Sahil Ali",position:"Software Engineer", office :"Tokyo", age:"22", startdate:"2024/07/01", salary:"162700"},
+  {name: "Sahil Ali",position:"Software Engineer", office :"Tokyo", age:"22", startdate:"2024/07/01", salary:"262400"},
+  {name: "Saif Ali",position:"AI Engineer", office :"Lucknow", age:"23", startdate:"2024/07/01", salary:"12700"},
+  {name: "Rahul Kumar",position:"Site Engineer", office :"Bangloare", age:"24", startdate:"2024/07/01", salary:"16200"},
+  {name: "Owais Khan",position:"Software Engineer", office :"Japan", age:"24", startdate:"2024/07/01", salary:"27011"},
+  {name: "Lucky Ali",position:"Site Engineer", office :"Tokyo", age:"25", startdate:"2024/07/01", salary:"34700"},
+  {name: "Suhail",position:"Software Engineer", office :"Sigapore", age:"26", startdate:"2024/07/01", salary:"44600"},
+  {name: "Shahrukh Khan",position:"Hero", office :"Pakistan", age:"27", startdate:"2024/07/01", salary:"44700"},
 ]
 function App() {
   const [filterdata, setfilterdata] = useState(peoples)
@@ -23,7 +23,10 @@ function App() {
     const filteredPeople = peoples.filter((person) => {
 
         return person.name.toLowerCase().includes(searchValue) || person.position.toLowerCase().includes(searchValue)
-        || person.office.toLowerCase().includes(searchValue); // Convert name to lowercase for comparison
+        || person.office.toLowerCase().includes(searchValue)
+        || person.age.toLowerCase().includes(searchValue)
+        || person.salary.toLowerCase().includes(searchValue)
+        || person.startdate.toLowerCase().includes(searchValue)
     });
     setfilterdata(filteredPeople)
 }
